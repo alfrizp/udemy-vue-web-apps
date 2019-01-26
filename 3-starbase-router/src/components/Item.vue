@@ -24,10 +24,9 @@ export default {
   methods: {
     switchItem() {
       const randomID = Math.ceil(Math.random() * 63);
-      fetch(`http://swapi.test/${this.type}.php?id=${randomID}`, {
-        method: 'GET',
+      fetch(`https://swapi.co/api/${this.type}/${randomID}`, {
         headers: {
-          'Access-Control-Allow-Origin': '*'
+          'Accept': 'application/json, text/plain, */*',
         }
       })
       .then(response => response.json())

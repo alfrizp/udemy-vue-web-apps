@@ -32,10 +32,9 @@ export default {
         const id = initialIDs[idx];
         console.log('id', id)
 
-        fetch(`http://swapi.test/${this.type}.php?id=${id}`, {
-          method: 'GET',
+        fetch(`https://swapi.co/api/${this.type}/${id}`, {
           headers: {
-            'Access-Control-Allow-Origin': '*'
+            'Accept': 'application/json, text/plain, */*',
           }
         })
         .then(response => response.json())
